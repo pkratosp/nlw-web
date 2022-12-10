@@ -33,6 +33,57 @@ interface GamesProps{
   bannerUrl: string;
 }
 
+const items = [
+  {
+    id: '1',
+    title: 'CS-GO',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/32399_IGDB-188x250.jpg',
+    _count: {
+      ads: 30
+    }
+  },
+  {
+    id: '2',
+    title: 'GTA 5',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/32982_IGDB-188x250.jpg',
+    _count: {
+      ads: 50
+    }
+  },
+  {
+    id: '3',
+    title: 'League of legends',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/21779-188x250.jpg',
+    _count: {
+      ads: 10
+    }
+  },
+  {
+    id: '3',
+    title: 'Fortnite',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/33214-285x380.jpg',
+    _count: {
+      ads: 5
+    }
+  },
+  {
+    id: '4',
+    title: 'Valorant',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg',
+    _count: {
+      ads: 3
+    }
+  },
+  {
+    id: '4',
+    title: 'Minecraft',
+    bannerUrl: 'https://static-cdn.jtvnw.net/ttv-boxart/27471_IGDB-285x380.jpg',
+    _count: {
+      ads: 3
+    }
+  }
+]
+
 function App() {
   //basicamente o useState serve para fazer eventos e ele por padrao retorna 2 coisas
   //a variavel que iremos atualizar e a funcção que ira executar
@@ -53,16 +104,16 @@ function App() {
 //         {hasButtonUserClick ? 'TU CLICOU NO BOTAO MENO' : null} */}
 
   //declaramos a interface no useState como um [] sendo que vem da API
-  const [games,setGames] = useState<GamesProps[]>([])
+  const [games,setGames] = useState<GamesProps[]>(items)
 
   //Um hackzim muito loco, se eu não passar nada no meu array ele ira executar somente uma vez
-  useEffect(() => {
-    fetch('http://localhost:20021/games'  )
-      .then(response => response.json())
-      .then(data => {
-        setGames(data)
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:20021/games'  )
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setGames(data)
+  //     })
+  // }, [])
 
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
